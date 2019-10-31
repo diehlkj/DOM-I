@@ -36,7 +36,68 @@ const siteContent = {
     "copyright" : "Copyright Great Idea! 2018"
   },
 };
+// NAVIGATION LINKS
+let navA = document.querySelectorAll('nav a');
+let NavAElement = Array.from(navA);
+NavAElement.forEach((a) => {
+  a.style.color = 'green';
+});
+NavAElement[0].textContent = siteContent["nav"]["nav-item-1"];
+NavAElement[1].textContent = siteContent["nav"]["nav-item-2"];
+NavAElement[2].textContent = siteContent["nav"]["nav-item-3"];
+NavAElement[3].textContent = siteContent["nav"]["nav-item-4"];
+NavAElement[4].textContent = siteContent["nav"]["nav-item-5"];
+NavAElement[5].textContent = siteContent["nav"]["nav-item-6"];
 
-// Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
-logo.setAttribute('src', siteContent["nav"]["img-src"])
+logo.setAttribute('src', siteContent["nav"]["img-src"]);
+
+let snippet = document.getElementById("cta-img");
+snippet.setAttribute('src', siteContent["cta"]["img-src"]);
+
+let h1 = document.getElementsByTagName('h1');
+Array.from(h1).forEach((h1) => {
+  h1.textContent = siteContent["cta"]["h1"];
+});
+
+let button = document.getElementsByTagName('button');
+Array.from(button).forEach((button) => {
+  button.textContent = siteContent["cta"]["button"];
+});
+
+// MAIN CONTENT HEADINGS
+let MainContentH4 = document.querySelectorAll('div .text-content h4');
+let MCH4Element = Array.from(MainContentH4);
+MCH4Element[0].textContent = siteContent["main-content"]["features-h4"];
+MCH4Element[1].textContent = siteContent["main-content"]["about-h4"];
+MCH4Element[2].textContent = siteContent["main-content"]["services-h4"];
+MCH4Element[3].textContent = siteContent["main-content"]["product-h4"];
+MCH4Element[4].textContent = siteContent["main-content"]["vision-h4"];
+
+let middleImg = document.getElementById("middle-img");
+middleImg.setAttribute('src', siteContent["main-content"]["middle-img-src"]);
+
+// MAIN CONTENT PARAGRAPHS
+let MainContentP = document.querySelectorAll('div .text-content p');
+let MCPElement = Array.from(MainContentP);
+MCPElement[0].textContent = siteContent["main-content"]["features-content"];
+MCPElement[1].textContent = siteContent["main-content"]["about-content"];
+MCPElement[2].textContent = siteContent["main-content"]["services-content"];
+MCPElement[3].textContent = siteContent["main-content"]["product-content"];
+MCPElement[4].textContent = siteContent["main-content"]["vision-content"];
+
+// CONTACT HEADING
+let contactH4 = document.querySelectorAll('.contact h4');
+let contactH4Element = Array.from(contactH4);
+contactH4Element[0].textContent = siteContent["contact"]["contact-h4"];
+
+// CONTACT PARAGRAPHS
+let contactP = document.querySelectorAll('.contact p');
+let contactPElement = Array.from(contactP);
+contactPElement[0].textContent = siteContent["contact"]["address"];
+contactPElement[1].textContent = siteContent["contact"]["phone"];
+contactPElement[2].textContent = siteContent["contact"]["email"];
+
+// Footer P
+let footerP = document.querySelectorAll('footer p');
+contactPElement[2].textContent = siteContent["copyright"]["email"];
