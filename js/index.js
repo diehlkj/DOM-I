@@ -41,22 +41,38 @@ const siteContent = {
     copyright: "Copyright Great Idea! 2018"
   }
 };
+// Append & Prepend for Navigation
+let nav = document.querySelector("nav");
+
+let newA2 = document.createElement('a');
+nav.prepend(newA2);
+let blogNode = document.createTextNode('Blog');
+newA2.appendChild(blogNode);
+
+let newA = document.createElement('a');
+newA.textContent = 'Home';
+nav.prepend(newA);
+
 // NAVIGATION LINKS
 let navA = document.querySelectorAll("nav a");
 let NavAElement = Array.from(navA);
-NavAElement.forEach(a => {
+NavAElement.forEach((a) => {
   a.style.color = "green";
 });
-NavAElement[0].textContent = siteContent["nav"]["nav-item-1"];
-NavAElement[1].textContent = siteContent["nav"]["nav-item-2"];
-NavAElement[2].textContent = siteContent["nav"]["nav-item-3"];
-NavAElement[3].textContent = siteContent["nav"]["nav-item-4"];
-NavAElement[4].textContent = siteContent["nav"]["nav-item-5"];
-NavAElement[5].textContent = siteContent["nav"]["nav-item-6"];
+NavAElement[2].textContent = siteContent["nav"]["nav-item-1"];
+NavAElement[3].textContent = siteContent["nav"]["nav-item-2"];
+NavAElement[4].textContent = siteContent["nav"]["nav-item-3"];
+NavAElement[5].textContent = siteContent["nav"]["nav-item-4"];
+NavAElement[6].textContent = siteContent["nav"]["nav-item-5"];
+NavAElement[7].textContent = siteContent["nav"]["nav-item-6"];
 
+
+
+// Site Logo
 let logo = document.getElementById("logo-img");
 logo.setAttribute("src", siteContent["nav"]["img-src"]);
 
+// CTA Section
 let snippet = document.getElementById("cta-img");
 snippet.setAttribute("src", siteContent["cta"]["img-src"]);
 
@@ -64,11 +80,14 @@ let h1 = document.getElementsByTagName("h1");
 Array.from(h1).forEach(h1 => {
   h1.textContent = siteContent["cta"]["h1"];
 });
+// for each (\s) in siteContent["cta"]["h1"]
+// 
 
 let button = document.getElementsByTagName("button");
 Array.from(button).forEach(button => {
   button.textContent = siteContent["cta"]["button"];
 });
+
 
 // MAIN CONTENT HEADINGS
 let MainContentH4 = document.querySelectorAll("div .text-content h4");
@@ -100,9 +119,10 @@ contactH4Element[0].textContent = siteContent["contact"]["contact-h4"];
 let contactP = document.querySelectorAll(".contact p");
 let contactPElement = Array.from(contactP);
 contactPElement[0].textContent = siteContent["contact"]["address"];
+contactPElement[0].style.width = '200px';
 contactPElement[1].textContent = siteContent["contact"]["phone"];
 contactPElement[2].textContent = siteContent["contact"]["email"];
 
 // Footer P
-let footerP = document.querySelectorAll("footer p");
-contactPElement[2].textContent = siteContent["copyright"]["email"];
+let footerP = document.querySelector("footer p");
+footerP.textContent = siteContent["footer"]["copyright"];
